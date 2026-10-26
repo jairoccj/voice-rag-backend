@@ -1,0 +1,15 @@
+[project]
+name = "voice-rag-backend"
+version = "0.1.0"
+description = "Offline streaming voice RAG using FastAPI, Silero, Whisper, Ollama and Piper"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "numpy>=1.26",
+  "onnxruntime>=1.18",
+  "faster-whisper>=1.0",
+  "httpx>=0.27",
+  "psycopg2-binary>=2.9",
+  "piper-tts>=1.2",
+]

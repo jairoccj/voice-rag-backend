@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voice RAG · Conversa local</title>
+<style>
+:root{color-scheme:dark;font:16px/1.5 system-ui,sans-serif;background:#0c111b;color:#edf2f7}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 0,#18283b,#0c111b 65%)}main{width:min(680px,92vw);padding:32px 0}header{text-align:center;margin-bottom:36px}h1{font-size:1.5rem;margin:12px 0 2px}.sub,.hint{color:#9baabe}.orb{width:120px;height:120px;margin:auto;border-radius:50%;background:radial-gradient(circle at 35% 30%,#9be7ff,#368bd9 50%,#243764 78%);box-shadow:0 0 52px #328bd955;transition:.25s}.orb.live{animation:pulse 1.8s infinite}.orb.speaking{background:radial-gradient(circle at 35% 30%,#b6ffdf,#24b486 50%,#234c5c 78%);box-shadow:0 0 52px #24b48666}@keyframes pulse{50%{transform:scale(1.06);box-shadow:0 0 75px #328bd988}}#status{text-align:center;color:#9baabe;margin:18px}.panel{background:#121a27;border:1px solid #233147;border-radius:18px;padding:22px;min-height:168px;display:flex;flex-direction:column;gap:14px}.line{padding:12px 15px;border-radius:13px;background:#192435;white-space:pre-wrap}.line.user{margin-left:9%;background:#1b3550}.line.bot{margin-right:9%}#log:empty:after{content:'Sua conversa aparecerá aqui.';color:#68798f}.controls{display:flex;justify-content:center;margin:24px}.button{border:0;border-radius:99px;padding:13px 25px;background:#78c8ee;color:#07111a;font-weight:700;font-size:1rem;cursor:pointer}.button:disabled{opacity:.5;cursor:wait}.hint{text-align:center;font-size:.85rem}
+</style>
+</head>
+<body><main>
+<header><div id="orb" class="orb"></div><h1>Conversa de voz local</h1><div class="sub">Áudio processado neste computador</div></header>
+<div id="status">Pronto para conversar</div><section id="log" class="panel" aria-live="polite"></section>
+<div class="controls"><button id="toggle" class="button">Iniciar conversa</button></div><div class="hint">Permita o acesso ao microfone para iniciar.</div>
+</main>
+<script src="/app.js"></script></body></html>

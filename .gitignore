@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Locally downloaded ONNX model assets (do not commit model weights)
+models/*.onnx
+models/*.onnx.json
