@@ -17,9 +17,19 @@ class TTSAgent:
         try:
             with tempfile.TemporaryDirectory(prefix="voice-rag-") as temp_dir:
                 wav_path = Path(temp_dir) / "speech.wav"
-                process = subprocess.Popen([self.executable, "--model", self.model, "--output_file", str(wav_path)], stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                process.stdin.write((text + "\n").encode("utf-8"))
+                
+                process = subprocess.Popen(
+                    [self.executable, "--model", self.model, "--output_file", str(wav_path)],
+                    stdin=subprocess.PIPE,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    text=True,
+                    encoding="utf-8"
+                )
+                
+                process.stdin.write(text + "\n")
                 process.stdin.close()
+                
                 while process.poll() is None and not cancel.is_set():
                     await asyncio.sleep(0.02)
                 if cancel.is_set():
